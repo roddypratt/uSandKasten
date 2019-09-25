@@ -75,10 +75,10 @@ end;
 
 function  UrlDecode(const AInputString: string): string;
 var p_src, p_dst: integer;
-    s           : string[2];
+    s           : string;
 begin
   SetLength(Result, Length(AInputString));
-  s[0] := chr(2);
+  SetLength(s,2);
   p_src := 1;
   p_dst := 1;
   while p_src <= Length(AInputString) do
@@ -102,7 +102,7 @@ end;
 
 function  UrlEncode(const AInputString: string): string;
 var i, p : integer;
-    s    : string[2];
+    s    : string;
 begin
   SetLength(Result, 3*Length(AInputString)); // worst case
   p := 1;
@@ -281,10 +281,10 @@ begin
 end;
 
 
-function GetEnvironmentString(AName: string): AnsiString;
+function GetEnvironmentString(AName: string): string;
 begin
-  SetLength(Result, GetEnvironmentVariableA(PChar(AName), nil, 0)-1);
-  GetEnvironmentVariableA(PChar(AName), PChar(Result), Length(Result)+1);
+  SetLength(Result, GetEnvironmentVariable(PChar(AName), nil, 0)-1);
+  GetEnvironmentVariable(PChar(AName), PChar(Result), Length(Result)+1);
 end;
 
 

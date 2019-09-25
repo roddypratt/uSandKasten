@@ -93,7 +93,7 @@ function  CreateTempfile(APrefix       : string;
 function  DigitStrToDigitWords(AInputString: string): string;
 function  EscapeString(const AString: string): string;
 function  GetComputerName: string;
-function  GetEnvironmentString(AName: string): AnsiString;
+function  GetEnvironmentString(AName: string): string;
 function  GetBuildInfo(const AFilename:String; var V1,V2,V3,V4:Word):Boolean;
 function  ExpressStringPart(AInputString, ADelimitingString: string; APartNumber: integer): string;
           // returns the APartNumber-th part within AInputString. AInputString is considered delimited by ADelimitingString;
